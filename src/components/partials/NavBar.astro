@@ -1,0 +1,23 @@
+---
+const navLinks = [
+  { name: 'Home', href: '/' },
+  { name: 'Word', href: '/word' },
+  { name: 'Tags', href: '/tags' },
+  { name: 'About', href: '/about' },
+];
+---
+
+<nav class="bg-red-500 mb-10">
+    <ul class="flex items-center justify-center space-x-8 pb-1">
+      {navLinks.map(link => (
+        <li>
+          <a
+            href={link.href}
+            class="text-white uppercase tracking-wide hover:text-lime-300 transition-colors duration-150 text-[10px]"
+          >
+            {link.name}
+          </a>
+        </li>
+      ))}
+    </ul>
+</nav>

@@ -1,0 +1,9 @@
+---
+import WordCmp from '../components/Word.svelte';
+import WordLayout from '../layouts/WordLayout.astro';
+import "../styles/global.css";
+---
+
+<WordLayout>
+	<WordCmp client:only />
+</WordLayout>

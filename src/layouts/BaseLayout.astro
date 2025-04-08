@@ -1,0 +1,59 @@
+---
+import NavBar from '../components/partials/NavBar.astro';
+import Footer from '../components/partials/Footer.astro';
+
+const {
+  title = 'certified-cowboy',
+  background = '#fdf6e3',
+  flexbox = '',
+  footer = true
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="cs">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="min-h-screen flex flex-col overflow-auto" style={`background-color: ${background}`}>
+    <NavBar />
+    <div class=`flex-grow p-4 ${flexbox}`>
+        <slot />
+    </div>
+    {footer ? <Footer /> : null}
+  </body>
+</html>
+
+<style is:global>
+  @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Press Start 2P', cursive;
+    overflow: auto;
+  }
+
+  .retro-frame {
+    box-shadow: 0 0 0 6px #4f46e5, 10px 10px 0 0 #a5b4fc;
+  }
+
+  .retro-shadow {
+    box-shadow: 8px 8px 0px #000;
+  }
+
+  .retro-tag {
+    box-shadow: 4px 4px 0 #4f46e5;
+  }
+
+  strong,
+  em {
+    color: #a800b7;
+  }
+</style>

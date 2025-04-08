@@ -1,0 +1,15 @@
+---
+import zej from '../assets/zej_obrovsky.png';
+---
+
+<div class="flex flex-col items-center">
+    <input type="checkbox" id="toggle-text" class="peer hidden" />
+  
+    <label for="toggle-text" class="cursor-pointer">
+      <img src={zej.src} alt="zej obrovsky" fetchpriority="high" />
+    </label>
+  
+    <div class="hidden peer-checked:flex flex-col items-center mt-4">
+      <p class="text-lg text-[#4e2323]">zej obrovský</p>
+    </div>
+  </div>
